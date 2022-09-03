@@ -37,6 +37,8 @@ public class LevelManager : MonoBehaviour
         Panel.SetActive(true);
         StartButton.SetActive(false);
         NextButton.SetActive(true);
+
+        SwipeController.Instance.enabled = false;
     }
     public void StartButtonFunc()
     {
@@ -61,6 +63,8 @@ public class LevelManager : MonoBehaviour
     public void NextButtonFunc()
     {
         NextScene();
+        SwipeController.Instance.enabled = true;
+
     }
     public void NextScene()
     {

@@ -11633,7 +11633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9c81b427b399a48a1a021015b6d730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensivity: 20
+  sensivity: 10
   NothingField: 1.5
   clampOnAxis: 6
   JumpToSens: 50

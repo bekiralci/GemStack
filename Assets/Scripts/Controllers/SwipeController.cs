@@ -5,6 +5,15 @@ using UnityEngine;
 public class SwipeController : MonoBehaviour
 {
 
+    private static SwipeController instance;
+
+    public static SwipeController Instance { get { return instance; } }
+
+    private void Start()
+    {
+        instance = this;
+    }
+
     Vector3 firstPressPos, secondPressPos, currentSwipe, SwipeCurrent;
     public float sensivity;
     public float NothingField = 1.5f, clampOnAxis = 6f, JumpToSens = 50, jumpToMove = 7, jumpForWait = 1.5f, rotateSensRadian = 30f;

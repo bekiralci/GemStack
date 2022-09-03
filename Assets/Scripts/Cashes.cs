@@ -15,23 +15,24 @@ public class Cashes : MonoBehaviour
         {
 
             hand.GetComponentInParent<PlayerMovement>().canMove = false;
+            Sequence mySequence = DOTween.Sequence();
 
-            handPrefab.transform.DORotate(new Vector3(0, 0, 180), .7f).OnComplete(() =>
+            transform.SetParent(hand.transform);
+            mySequence.Join(handPrefab.transform.DOLocalMove(new Vector3(0, 0, handPrefab.localPosition.z), .4f));
+            mySequence.Join(handPrefab.transform.DORotate(new Vector3(0, 0, 180), .7f));
+            mySequence.OnComplete(() =>
             {
-                transform.SetParent(hand.transform);
-
-
-                handPrefab.transform.DOLocalMove(new Vector3(0, 0, handPrefab.localPosition.z), .4f).OnComplete(() =>
+                hand.transform.DOMoveY(14f, 1f).OnComplete(() =>
                 {
-                    print("talla");
-                    hand.transform.DOMoveY(14f, 1f).OnComplete(() => { GameManager.Instance.LevelWinner(); });
-
+                    GameManager.Instance.LevelWinner();
                 });
-
             });
+
+
 
         }
 
     }
 
 }
+

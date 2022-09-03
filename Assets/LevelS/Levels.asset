@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Levels
   m_EditorClassIdentifier: 
   levelPrefabs:
+  - {fileID: 9111238593830809852, guid: 0d498611233f25245b596990ad559314, type: 3}
   - {fileID: 5006631205610849575, guid: 9e7604777974d594994068cd31e993aa, type: 3}
